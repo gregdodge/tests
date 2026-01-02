@@ -7,21 +7,61 @@
 <title>Dev Stuff</title>  
 
 <script>
-  function siteSearch() {
-  const input = document.getElementById('search-box').value.toLowerCase();
-  const contentBlocks = document.getElementsByClassName('searchable-content');
+// search.js
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById('search-input');
+  const searchForm = document.getElementById('search-form');
+  const resultsContainer = document.getElementById('search-results');
+  let searchIndex = []; // This will hold your site's index data
 
-  for (let i = 0; i < contentBlocks.length; i++) {
-    // Get text from both the heading and paragraph
-    const textContent = contentBlocks[i].innerText.toLowerCase();
+  // 1. Fetch the pre-built search index (search_index.json)
+  fetch('/search_index.json')
+    .then(response => response.json())
+    .then(data => {
+      searchIndex = data;
+      // Optional: Initialize your search library with the fetched data here
+      // e.g., mySearchLibrary.addAll(searchIndex);
+    })
+    .catch(error => {
+      console.error('Error fetching search index:', error);
+    });
 
-    if (textContent.includes(input)) {
-      contentBlocks[i].style.display = ""; // Show matching content
+  // 2. Handle the search form submission
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission and page reload
+    const query = searchInput.value.toLowerCase().trim();
+    if (query.length > 0) {
+      displayResults(query);
+    }
+  });
+
+  // 3. Function to perform the search and display results
+  function displayResults(query) {
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    // Pseudocode: Replace this with your chosen library's search logic (e.g., MiniSearch.search(query))
+    const results = searchIndex.filter(item => 
+      item.title.toLowerCase().includes(query) || 
+      item.content.toLowerCase().includes(query)
+    ); 
+
+    if (results.length > 0) {
+      const list = document.createElement('ul');
+      results.forEach(result => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = result.url;
+        link.textContent = result.title;
+        listItem.appendChild(link);
+        list.appendChild(listItem);
+      });
+      resultsContainer.appendChild(list);
     } else {
-      contentBlocks[i].style.display = "none"; // Hide non-matching content
+      resultsContainer.innerHTML = '<p>No results found.</p>';
     }
   }
-}
+});
+
 </script>
   
 </head>
@@ -30,13 +70,14 @@
 <div style="width:100%">  
 <div style="max-width:650px;margin: 0 auto;border:1px solid grey;padding:25px 50px 50px 50px;">  
 
-  <h1>Dev stuff</h1>
+  <h1>Javascript - Search</h1>
   
-<search>
-  <input type="text" id="search-box" placeholder="Search content..." onkeyup="siteSearch()">
-</search>
-
-  <div>SliceFinder</div>
+<form id="search-form">
+  <input type="text" id="search-input" placeholder="Search entire website..." autocomplete="off">
+  <button type="submit">Search</button>
+</form>
+<div id="search-results"></div>
+  
 
 </div>
 </div>  
