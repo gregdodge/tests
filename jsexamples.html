@@ -79,7 +79,7 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 /* styling */
-.container {
+.container1 {
 /*   background-color: red;  */
   width: 30rem;
   display: flex;
@@ -122,7 +122,7 @@ body {
 }
 	</style>
 	
-	<div class="container">
+	<div class="container1">
   <div data-box="one" class="box box--1">
     I'm Active
   </div>
@@ -138,6 +138,22 @@ body {
 	<p></p>
 	  <hr style="border:none;height: 1px;background-color:grey;"/>
 	<p></p>    	
+
+	<script>
+		const switchBtn = document.querySelector(".btn");
+const box1El = document.querySelector(".box--1");
+
+switchBtn.addEventListener("click", function () {
+  const active = document.querySelector('.active');
+  if(active){
+    const notActive = document.querySelector('.box:not(.active)')
+    notActive.classList.add('active')
+    active.classList.remove('active')
+  }else{
+    box1El.classList.add('active')
+  }
+});
+	</script>
 
 	
 	<p>Example 3.</p>
