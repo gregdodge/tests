@@ -64,65 +64,66 @@
 	
 	<p>Example 2.</p>
 
+	
 	<style>
-.container {
-/*   background-color: red;  */
-  width: 30rem;
-  display: flex;
-  align-items: center;
-  gap: 5rem;
-  margin-bottom: 3rem;
-}
-.box {
-  position:relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: 1rem;
-  background-color: pink;
-  border-radius: 1rem;
-  font-size: 18px;
-  font-weight: bold;
-  display: flex;
-  place-items: center;
-  color: hsla(0, 0%, 0%, 1);
-}
-.box:after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  background:cornflowerblue;
-  border-radius: 1rem;
-  width:100%;
-  height:100%;
-  max-height:30rem;
-  transition:max-height 0.5s;
-}
-.box.active:after{
-  max-height:0;
-}
-
-.btn  {
-  justify-self: center;
-  padding: 1rem 2rem;
-}
-	  </style>
-
-<div align="center">
+	.container {
+	/*   background-color: red;  */
+	  width: 30rem;
+	  display: flex;
+	  align-items: center;
+	  gap: 5rem;
+	  margin-bottom: 3rem;
+	}
+	.box {
+	  position:relative;
+	  width: 100%;
+	  aspect-ratio: 1 / 1;
+	  padding: 1rem;
+	  background-color: pink;
+	  border-radius: 1rem;
+	  font-size: 18px;
+	  font-weight: bold;
+	  display: flex;
+	  place-items: center;
+	  color: hsla(0, 0%, 0%, 1);
+	}
+	.box:after{
+	  content:"";
+	  position:absolute;
+	  top:0;
+	  left:0;
+	  background:cornflowerblue;
+	  border-radius: 1rem;
+	  width:100%;
+	  height:100%;
+	  max-height:30rem;
+	  transition:max-height 0.5s;
+	}
+	.box.active:after{
+	  max-height:0;
+	}
 	
-<div class="container">
-  <div data-box="one" class="box box--1">
-    I'm Active
-  </div>
-  <div data-box="two" class="box box--2">
-    I'm Active
-  </div>
-</div>
+	.btn  {
+	  justify-self: center;
+	  padding: 1rem 2rem;
+	}
+		  </style>
 	
-
-<button class="btn">Switch</button>
-
-</div>
+	<div align="center">
+		
+	<div class="container">
+	  <div data-box="one" class="box box--1">
+	    I'm Active
+	  </div>
+	  <div data-box="two" class="box box--2">
+	    I'm Active
+	  </div>
+	</div>
+		
+	
+	<button class="btn">Switch</button>
+	
+	</div>
 
 	<p style="height:15px;"/>  
 
@@ -148,210 +149,206 @@
 	
 	<p>Example 3.</p>
 
-<style>
-.accordion {
-  width: 600px;
-  margin: 50px auto;
-  display: flex;
-  flex-direction: column;
-}
-.items {
-  border-top: 4px solid white;/*ADDED TOP BORDER TO STOP LAYOUT SHIFT*/
-  cursor:pointer;
-  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.1);
-  padding: 24px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  column-gap: 16px;
-  transition:all 0.3s;
-}
-.items:not(:first-child){
-  margin-top:24px;
-}
-.icon{
-  transition: all 0.3s;
-}
-.items.open svg{
-  transform: rotate(180deg);
-}
-.icon,
-.text {
-align-self: center;
-}
-.hidden-box {
-  max-height:0;
-  overflow:hidden;
-  transition: all 0.3s;
-  box-shadow: 0 0 32px 0 rgb(0 0 0 / 10%);
-}
-.hidden-box .inner{
-  padding:24px;
-  grid-column: 2;
-  display: grid;
-}
-.open {
-  border-top: 4px solid green;
-  height:100%;
-}
-.open .hidden-box {
-  padding-top:24px;
-max-height: 100%;
-}
-.open .number {
-color: #087f5b;
-}
-.open .text {
-color: #087f5b;
-}
-.icon {
-  width: 24px;
-  color: #087f5b;
-  font-size: larger;
-  stroke-width: 2px;
-}
-.number {
-  font-size: 24px;
-/* color: #087f5b; */
-}
-.text {
-  font-size: 24px;
-  /* color: #087f5b; */
-  font-weight: 500;
-}
-.number {
-  color: grey;
-}
-.hidden-box p {
-  margin-bottom: 24px;
-}
-.hidden-box ul {
-  font-size: 14px;
-  color: grey;
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-</style>
+	<style>
+	.accordion {
+	  width: 600px;
+	  margin: 50px auto;
+	  display: flex;
+	  flex-direction: column;
+	}
+	.items {
+	  border-top: 4px solid white;/*ADDED TOP BORDER TO STOP LAYOUT SHIFT*/
+	  cursor:pointer;
+	  box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.1);
+	  padding: 24px;
+	  display: grid;
+	  grid-template-columns: auto 1fr auto;
+	  column-gap: 16px;
+	  transition:all 0.3s;
+	}
+	.items:not(:first-child){
+	  margin-top:24px;
+	}
+	.icon{
+	  transition: all 0.3s;
+	}
+	.items.open svg{
+	  transform: rotate(180deg);
+	}
+	.icon,
+	.text {
+	align-self: center;
+	}
+	.hidden-box {
+	  max-height:0;
+	  overflow:hidden;
+	  transition: all 0.3s;
+	  box-shadow: 0 0 32px 0 rgb(0 0 0 / 10%);
+	}
+	.hidden-box .inner{
+	  padding:24px;
+	  grid-column: 2;
+	  display: grid;
+	}
+	.open {
+	  border-top: 4px solid green;
+	  height:100%;
+	}
+	.open .hidden-box {
+	  padding-top:24px;
+	max-height: 100%;
+	}
+	.open .number {
+	color: #087f5b;
+	}
+	.open .text {
+	color: #087f5b;
+	}
+	.icon {
+	  width: 24px;
+	  color: #087f5b;
+	  font-size: larger;
+	  stroke-width: 2px;
+	}
+	.number {
+	  font-size: 24px;
+	/* color: #087f5b; */
+	}
+	.text {
+	  font-size: 24px;
+	  /* color: #087f5b; */
+	  font-weight: 500;
+	}
+	.number {
+	  color: grey;
+	}
+	.hidden-box p {
+	  margin-bottom: 24px;
+	}
+	.hidden-box ul {
+	  font-size: 14px;
+	  color: grey;
+	  margin-left: 15px;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 12px;
+	}
+	</style>
 
-	<!-- in response to https://www.reddit.com/r/css/comments/xw7z5j/how_to_remove_the_2nd_column_space/ -->
-<div class="accordion">
-  <div class="items">
-    <p class="number">01</p>
-    <p class="text">Where are the chairs assembled</p>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="icon"
-      >
-      <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-      />
-    </svg>
-  </div>
-<div class="hidden-box">
-  <div class="inner">
-    <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-    itaque qui deserunt nam officiis necessitatibus aspernatur fuga
-    possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
-    accusamus cum, sed ducimus porro!
-    </p>
-    <ul>
-    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-    <li>Adipisci, eos consequuntur</li>
-    <li>laboriosam hic quod ut. Dolorem eius minus ea</li>
-    <li>last pointer</li>
-    </ul>
-  </div>
-</div>
-  <div class="items">
-    <p class="number">02</p>
-    <p class="text">How long do I have to return my chair</p>
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    class="icon"
-    >
-    <path
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-    />
-    </svg>
-  </div>
-  <div class="hidden-box">
-    <div class="inner"> 
-      <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-    itaque qui deserunt nam officiis necessitatibus aspernatur fuga
-    possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
-    accusamus cum, sed ducimus porro!
-    </p>
-    <ul>
-    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-    <li>Adipisci, eos consequuntur</li>
-    <li>laboriosam hic quod ut. Dolorem eius minus ea</li>
-    <li>last pointer</li>
-    </ul>
-  </div>
-</div>
-<div class="items">
-  <p class="number">03</p>
-  <p class="text">Do you ship to countires outside the EU</p>
-  <svg
-  xmlns="http://www.w3.org/2000/svg"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke-width="1.5"
-  stroke="currentColor"
-  class="icon"
-  >
-  <path
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
-  />
-  </svg>
-</div>
-<div class="hidden-box">
-  <div class="inner">
-<p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-itaque qui deserunt nam officiis necessitatibus aspernatur fuga
-possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
-accusamus cum, sed ducimus porro!
-</p>
-<ul>
-<li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
-<li>Adipisci, eos consequuntur</li>
-<li>laboriosam hic quod ut. Dolorem eius minus ea</li>
-<li>last pointer</li>
-</ul>
-  </div>
-</div>
-</div>
+	<div class="accordion">
+	  <div class="items">
+	    <p class="number">1</p>
+	    <p class="text">Dropdown One</p>
+	    <svg
+	      xmlns="http://www.w3.org/2000/svg"
+	      fill="none"
+	      viewBox="0 0 24 24"
+	      stroke-width="1.5"
+	      stroke="currentColor"
+	      class="icon"
+	      >
+	      <path
+	      stroke-linecap="round"
+	      stroke-linejoin="round"
+	      d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+	      />
+	    </svg>
+	  </div>
+	<div class="hidden-box">
+	  <div class="inner">
+	    <p>
+	    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+	    itaque qui deserunt nam officiis necessitatibus aspernatur fuga
+	    possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
+	    accusamus cum, sed ducimus porro!
+	    </p>
+	    <ul>
+	    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+	    <li>Adipisci, eos consequuntur</li>
+	    <li>last pointer</li>
+	    </ul>
+	  </div>
+	</div>
+	  <div class="items">
+	    <p class="number">2</p>
+	    <p class="text">Dropdown 2</p>
+	    <svg
+	    xmlns="http://www.w3.org/2000/svg"
+	    fill="none"
+	    viewBox="0 0 24 24"
+	    stroke-width="1.5"
+	    stroke="currentColor"
+	    class="icon"
+	    >
+	    <path
+	    stroke-linecap="round"
+	    stroke-linejoin="round"
+	    d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+	    />
+	    </svg>
+	  </div>
+	  <div class="hidden-box">
+	    <div class="inner"> 
+	      <p>
+	    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+	    itaque qui deserunt nam officiis necessitatibus aspernatur fuga
+	    possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
+	    accusamus cum, sed ducimus porro!
+	    </p>
+	    <ul>
+	    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+	    <li>Adipisci, eos consequuntur</li>
+	    <li>last pointer</li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="items">
+	  <p class="number">3</p>
+	  <p class="text">Dropdown 3</p>
+	  <svg
+	  xmlns="http://www.w3.org/2000/svg"
+	  fill="none"
+	  viewBox="0 0 24 24"
+	  stroke-width="1.5"
+	  stroke="currentColor"
+	  class="icon"
+	  >
+	  <path
+	  stroke-linecap="round"
+	  stroke-linejoin="round"
+	  d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+	  />
+	  </svg>
+	</div>
+	<div class="hidden-box">
+	  <div class="inner">
+	<p>
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+	itaque qui deserunt nam officiis necessitatibus aspernatur fuga
+	possimus voluptatem incidunt deleniti totam, fugit voluptas magnam,
+	accusamus cum, sed ducimus porro!
+	</p>
+	<ul>
+	<li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+	<li>laboriosam hic quod ut. Dolorem eius minus ea</li>
+	<li>last pointer</li>
+	</ul>
+	  </div>
+	</div>
+	</div>
 
 	<script>
 		const questions = document.querySelectorAll('.items')
-questions.forEach(question=>{
-  question.addEventListener('click',()=>{
-    if(question.classList.contains('open')){
-      question.nextElementSibling.style.maxHeight =0;
-    }else{
-      question.nextElementSibling.style.maxHeight = question.nextElementSibling.scrollHeight + "px";
-    }
-    question.classList.toggle('open')
-  })
-})
+		questions.forEach(question=>{
+		  question.addEventListener('click',()=>{
+		    if(question.classList.contains('open')){
+		      question.nextElementSibling.style.maxHeight =0;
+		    }else{
+		      question.nextElementSibling.style.maxHeight = question.nextElementSibling.scrollHeight + "px";
+		    }
+		    question.classList.toggle('open')
+		  })
+		})
 	</script>
 	
 </div>
