@@ -1,1 +1,1 @@
-Javascript and Bootstrap tests / sample code
+Javascript and Bootstrap tests code exercises
