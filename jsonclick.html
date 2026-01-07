@@ -24,6 +24,28 @@
     <img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
   <button onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulboff.gif'">Turn off</button>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Hide this</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+  
+
+  
 <p></p>
   <hr style="border:none;height: 1px;background-color:grey;"/>
 <p></p>  
