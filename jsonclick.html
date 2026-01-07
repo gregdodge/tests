@@ -43,13 +43,12 @@
   <button type="button" onclick="document.getElementById('hide1').style.display='none'">Hide text</button>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#hide").click(function(){
+  $("#hidethis").click(function(){
     $("p").hide();
   });
-  $("#show").click(function(){
+  $("#showthis").click(function(){
     $("p").show();
   });
 });
@@ -59,8 +58,8 @@ $(document).ready(function(){
 
 <p>Hide this</p>
 
-<button id="hide">Hide</button>
-<button id="show">Show</button>
+<button id="hidethis">Hide</button>
+<button id="showthis">Show</button>
 
   
 <p></p>
