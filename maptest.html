@@ -16,11 +16,11 @@ function showPosition(position) {
     const longitude = position.coords.longitude;
 
     // Construct the Google Maps URL
-    const googleMapsUrl = `https://maps.google.com{latitude},${longitude}`;
+    const googleMapsUrl = 'https://maps.google.com{latitude},${longitude};
 
     // Create and display the link
     const linkContainer = document.getElementById("location-link-container");
-    linkContainer.innerHTML = `<a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer">Click to open your current location on Google Maps</a>`;
+    linkContainer.innerHTML = '<a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer">Click to open your current location on Google Maps</a>';
 }
 
 function showError(error) {
